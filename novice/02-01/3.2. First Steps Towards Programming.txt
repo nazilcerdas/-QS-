@@ -1,0 +1,42 @@
+Microsoft Windows [Version 10.0.22000.795]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\LENOVO>python
+Python 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> # Fibonacci series:
+>>> # the sum of two elements defines the next
+>>>  while a < 10:
+  File "<stdin>", line 1
+    while a < 10:
+IndentationError: unexpected indent
+>>> while a < 10:
+...     print(a)
+...     a, b = b, a+b
+...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> # Fibonacci series:
+>>> # the sum of two elements defines the next
+>>> a, b = 0, 1
+>>> while a < 10:
+...     print(a)
+...     a, b = b, a+b
+...
+0
+1
+1
+2
+3
+5
+8
+>>> i = 256*256
+>>> print('The value of i is', i)
+The value of i is 65536
+>>> a, b = 0, 1
+>>> while a < 1000:
+...     print(a, end=',')
+...     a, b = b, a+b
+...
+0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,>>>

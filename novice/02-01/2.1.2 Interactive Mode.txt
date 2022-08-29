@@ -1,0 +1,29 @@
+Membuka interpreter python di cmd
+Microsoft Windows [Version 10.0.22000.795]
+(c) Microsoft Corporation. All rights reserved.
+
+1. C:\Users\LENOVO>python
+   Python 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)] on win32
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>>Microsoft Windows [Version 10.0.22000.795]
+   (c) Microsoft Corporation. All rights reserved.
+
+2. >>> the_world_is_flat = True
+   >>> if the_world_is_flat:
+   ...     print("Be careful not to fall off!")
+   ...
+   Be careful not to fall off!
+. DALAM VS CODE TIDAK BOLEH PAKAI SPASI JIKA MENGETIK
+. KETIK TAB SEBELUM MENGETIK print("Be careful not to fall off!")
+. SETELAH MENGETIK PRINT ENTER 2 KALI
+
+3. >>> # this is the first comment
+   >>> spam = 1  # and this is the second comment
+   >>> text = "# This is not a comment because it's inside quotes."
+   >>> print(spam)
+   1
+   >>> print(text)
+   # This is not a comment because it's inside quotes.
+. Jika diawali # maka tidak akan terbaca
+. Jika diapit ""/'', maka akan terbaca
+. ""/'' untuk huruf, jika angka tanpa petik
