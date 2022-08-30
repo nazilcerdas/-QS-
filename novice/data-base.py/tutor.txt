@@ -1,0 +1,90 @@
+Server [localhost]:
+Database [postgres]:
+Port [5432]:
+Username [postgres]:
+Password for user postgres:
+psql (14.5)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \l
+                                             List of databases
+   Name    |  Owner   | Encoding |        Collate         |         Ctype          |   Access privileges
+-----------+----------+----------+------------------------+------------------------+-----------------------
+ contoh    | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 |
+ postgres  | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 |
+ template0 | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 | =c/postgres          +
+           |          |          |                        |                        | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 | =c/postgres          +
+           |          |          |                        |                        | postgres=CTc/postgres
+(4 rows)
+
+
+postgres=# create database contoh;
+ERROR:  database "contoh" already exists
+postgres=# create database "contoh";
+ERROR:  database "contoh" already exists
+postgres=# \c contoh;
+You are now connected to database "contoh" as user "postgres".
+contoh=# \d
+         List of relations
+ Schema | Name  | Type  |  Owner
+--------+-------+-------+----------
+ public | siswi | table | postgres
+(1 row)
+
+
+contoh=#
+contoh=# "siswi" ("nama"varchar, "umur"int);
+ERROR:  syntax error at or near ""siswi""
+LINE 1: "siswi" ("nama"varchar, "umur"int);
+        ^
+contoh=# select * from siswa;
+ERROR:  relation "siswa" does not exist
+LINE 1: select * from siswa;
+                      ^
+contoh=# select * from siswi;
+ nama | umur
+------+------
+(0 rows)
+
+
+contoh=# inset into siswi(nama, umur) values("nazil", 19);
+ERROR:  syntax error at or near "inset"
+LINE 1: inset into siswi(nama, umur) values("nazil", 19);
+        ^
+contoh=# insert into siswi(nama, umur) values("nazil", 19);
+ERROR:  column "nazil" does not exist
+LINE 1: insert into siswi(nama, umur) values("nazil", 19);
+                                             ^
+contoh=# insert into "siswi" values("nazil", 19);
+ERROR:  column "nazil" does not exist
+LINE 1: insert into "siswi" values("nazil", 19);
+                                   ^
+contoh=# insert into "siswi" values('nazil', 19);
+INSERT 0 1
+contoh=# select * from siswi;
+ nama  | umur
+-------+------
+ nazil |   19
+(1 row)
+
+
+contoh=# \l
+                                             List of databases
+   Name    |  Owner   | Encoding |        Collate         |         Ctype          |   Access privileges
+-----------+----------+----------+------------------------+------------------------+-----------------------
+ contoh    | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 |
+ postgres  | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 |
+ template0 | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 | =c/postgres          +
+           |          |          |                        |                        | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_Indonesia.1252 | English_Indonesia.1252 | =c/postgres          +
+           |          |          |                        |                        | postgres=CTc/postgres
+(4 rows)
+
+
+contoh=# create database suppliers;
+CREATE DATABASE
+contoh=#
