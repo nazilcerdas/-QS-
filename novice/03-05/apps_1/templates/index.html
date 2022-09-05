@@ -1,0 +1,84 @@
+[23.41, 5/9/2022] +62 856-4356-8586: <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
+      table{
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddd;
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #dddd;
+      }
+    </style>
+</head>
+<body>
+  <div>
+
+    <h1>Ini request</h1>
+    <form action="" method="post">
+        <input name="nama" type="text" required>
+        <label for="">nama</label>
+        <input name="detail" type="text" required>
+        <label for="">detail</label>
+        <button type="submit">kirim</button>
+
+    </form>
+
+    <hr>
+    <h1>Ini respons</h1>
+    <br>
+    <table>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>actions</th>
+      </tr>
+      {% for d in context %}
+      <tr>
+        <td>{{d[0]}}</td>
+        <td>{{d[1]}}</td>
+        <td>
+          <a href="/detail/{{d[0]}}">
+            <button>detail</button>
+          </a>
+          <a href="">
+            <button>update</button>
+          </a>
+          <a href="/delete/{{d[0]}}">
+            <button>delete</button>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+</html>
+[23.42, 5/9/2022] +62 856-4356-8586: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<h>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        <a href="/">home</a>
+    </h2>
+    <h1>detail</h1>
+    <span>nama buah: {{context[1]}}</span>
+    <br>
+    <span>rasa buah: {{context[2]}}</span>
+</body>
+</html>
